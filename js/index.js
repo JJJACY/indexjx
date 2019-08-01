@@ -70,12 +70,11 @@ const PAGE ={
   //   $(this).value = '';
   // },
   sendMessage: function(){
-    let value =$('input#message-text').val();
+    let value =$('textarea#input-message').val();
     PAGE.addCart(value);
   },
   removeItem: function(){
     $(this).parent().remove();
-    console.log($(this))
   },
   setDefaultDatas: function(){
     PAGE.data.defaultDatas.forEach( data => PAGE.addCart(data.name));
@@ -94,7 +93,7 @@ const PAGE ={
     let zIndex = ++PAGE.data.zIndex;
     let backgroundUrls = PAGE.data.backgroundUrls;
     let backgroundUrl = backgroundUrls[zIndex%backgroundUrls.length];
-    let value = $('input#input-message').val();
+    let value =$('textarea#input-message').val();
     let cartItem = `
     <div class="message-card-item" style="z-index:${zIndex};background:${backgroundUrl};top:${randomTop}px;left:${randomLeft}px;">
       <div class="message-left-img">
