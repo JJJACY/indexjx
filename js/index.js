@@ -23,7 +23,8 @@ const PAGE ={
     let cartList = document.getElementById('card-list');
     $('#card-list').on('mousedown','.message-card-item',this.handleMouseDown);
     $('#card-list').on('click','.message-close',this.removeItem);
-    $('#input-message').on('keydown',this.keyUp)
+    $('#send-Message-btn').on('click',this.sendMessage);
+    //$('#input-message').on('keydown',this.keyUp)
     $(window).on('mousemove',this.handleMouseMove);
     $(window).on('mouseup',this.handleMouseUp);
   },
@@ -59,14 +60,18 @@ const PAGE ={
   handleMouseUp: function() {
     PAGE.data.isLock = true
   },
-  keyUp: function(e){
+  // keyUp: function(e){
+  //   let value =$('input#message-text').val();
+  //   let key = e.which;
+  //   if(key !== 13){
+  //     return
+  //   }
+  //   PAGE.addCart(value);
+  //   $(this).value = '';
+  // },
+  sendMessage: function(){
     let value =$('input#message-text').val();
-    let key = e.which;
-    if(key !== 13){
-      return
-    }
     PAGE.addCart(value);
-    $(this).value = '';
   },
   removeItem: function(){
     $(this).parent().remove();
@@ -109,7 +114,5 @@ const PAGE ={
   randomBetween: function(min,max){
     return Math.floor(Math.random()*(max-min)+min);
   }
-
 }
-
 PAGE.init();

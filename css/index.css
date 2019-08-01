@@ -322,6 +322,7 @@
   height: 84px;
   padding-left: 10px;
   width: 648px;
+  outline: none;
 }
 .main-container .message-section .message-input .message-input-btn {
   position: absolute;
@@ -385,6 +386,7 @@
   font-size: 14px;
 }
 .main-container .message-section .message-borad .message-card-item .message-borad-text {
+  word-break: break-all;
   line-height: 26px;
   font-size: 14px;
 }
